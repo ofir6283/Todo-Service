@@ -41,10 +41,10 @@ function App() {
   return (
     <>
       <TodoList todosList={todoList} toggleTodo={toggleTodo} />
-      <input ref={todoNameRef} type='text' />
-      <button onClick={handleAddTodo}>Add Task</button>
-      <button onClick={handleClearTodos}>Mark Task as completed</button>
-      <div>Tasks Left: {todoList.filter(todo => !todo.isCompleted).length}</div>
+      <input className='task-input-textbox' ref={todoNameRef} type='text' placeholder='Please Write your task here' />
+      <button className='add-task-btn' onClick={handleAddTodo}>Add Task</button>
+      <button className='completed-task-btn' onClick={handleClearTodos}>Mark Task as completed</button>
+      <div className='tasks-left'>Tasks Left: {todoList.filter(todo => !todo.isCompleted).length}</div>
     </>
   )
 }
