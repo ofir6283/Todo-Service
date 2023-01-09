@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './App.css';
 import TodoList from './TodoList';
+import MainBackground from './images/oceanBackground.jpg'
 
 // const LOCAL_STORAGE_KEY = 'todoApp.todoList';
 
@@ -40,11 +41,20 @@ function App() {
   }
   return (
     <>
-      <TodoList todosList={todoList} toggleTodo={toggleTodo} />
-      <input className='task-input-textbox' ref={todoNameRef} type='text' placeholder='Please Write your task here' />
-      <button className='add-task-btn' onClick={handleAddTodo}>Add Task</button>
-      <button className='completed-task-btn' onClick={handleClearTodos}>Mark Task as completed</button>
-      <div className='tasks-left'>Tasks Left: {todoList.filter(todo => !todo.isCompleted).length}</div>
+      <div className='main-background-img' style={{ backgroundImage: `url(${MainBackground})` }}>
+        <div className='main-container'>
+
+          {/* <img className='main-background-img' src={MainBackground} /> */}
+          <input className='task-input-textbox' ref={todoNameRef} type='text' placeholder='Please Write your task here' />
+          <button className='add-task-btn' onClick={handleAddTodo}>Add Task</button>
+          <button className='completed-task-btn' onClick={handleClearTodos}>Mark Task as completed</button>
+          <div className='tasks-left'>Tasks Left: {todoList.filter(todo => !todo.isCompleted).length}</div>
+        </div>
+      </div>
+
+      <div className='tasks'>
+        <TodoList todosList={todoList} toggleTodo={toggleTodo} />
+      </div>
     </>
   )
 }
