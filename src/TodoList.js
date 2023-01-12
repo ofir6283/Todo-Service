@@ -1,7 +1,6 @@
 import React, { useId } from 'react';
 import Todo from './Todo';
 
-
 const TodoList = ({ todosList, toggleTodo }) => {
     return (
         todosList.map(todo => {

@@ -1,3 +1,7 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 .App {
   text-align: center;
 }
@@ -37,6 +41,13 @@
   }
 }
 
+.body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
 .add-task-btn {
   background-color: #4caf50;
   border: none;
@@ -91,9 +102,9 @@
   flex-direction: column;
   justify-content: center;
   color: rgb(0, 0, 0, 0.5);
-  margin-top: 10em;
-  padding: 10em;
+  margin-top: 5em;
   background-color: rgba(0, 255, 76, 0.262);
+  border-radius: 0.5em;
 }
 
 .main-background-img {

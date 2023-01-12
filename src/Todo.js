@@ -4,7 +4,6 @@ export default function Todo({ todo, toggleTodo }) {
     function handleTodoClick() {
         toggleTodo(todo.id);
     }
-    console.log(todo.name, todo.id)
     return (
         <div>
             <label>
