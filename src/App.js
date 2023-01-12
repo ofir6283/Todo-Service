@@ -1,7 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useId, useRef, useState } from 'react';
+import uuid4 from 'uuid4';
 import './App.css';
+import MainBackground from './images/oceanBackground.jpg';
 import TodoList from './TodoList';
-import MainBackground from './images/oceanBackground.jpg'
 
 // const LOCAL_STORAGE_KEY = 'todoApp.todoList';
 
@@ -24,10 +25,12 @@ function App() {
     const name = todoNameRef.current.value
     if (name === '') return
     setTodos(prevTodos => {
-      return [...prevTodos, { id: todoList.length + 1, name: name, isCompleted: false }]
+      return [...prevTodos, { id: uuid4(), name: name, isCompleted: false }]
     })
     todoNameRef.current.value = null;
   }
+
+
   function toggleTodo(id) {
     const newTodos = [...todoList];
     const todo = newTodos.find(todo => todo.id === id);
@@ -39,6 +42,7 @@ function App() {
     const newTodos = todoList.filter(todo => !todo.isCompleted)
     setTodos(newTodos)
   }
+  console.log(todoList.length)
   return (
     <>
       <div className='main-background-img' style={{ backgroundImage: `url(${MainBackground})` }}>
