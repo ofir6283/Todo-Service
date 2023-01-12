@@ -84,7 +84,6 @@
   align-items: center;
   justify-content: center;
   margin-top: 25em;
-  z-index: 100;
 }
 .tasks {
   display: flex;
@@ -100,7 +99,7 @@
 .main-background-img {
   height: 100%;
   width: 100%;
-  z-index: -100;
+
   opacity: 70%;
   position: relative;
 }
